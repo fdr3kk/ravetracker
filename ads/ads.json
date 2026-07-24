@@ -3,7 +3,7 @@
     "id": 1,
     "title": "Underground Music Festival 2026",
     "type": "banner",
-    "image": "https://picsum.photos/728/90?random=1",
+    "image": "https://loremflickr.com/728/90/festival,music",
     "targetUrl": "https://example.com/festival",
     "active": true
   },
@@ -11,7 +11,7 @@
     "id": 2,
     "title": "Rick Rubin Nyakkah",
     "type": "sidebar",
-    "image": "https://picsum.photos/160/200?random=2",
+    "image": "https://loremflickr.com/160/200/dj,music",
     "targetUrl": "https://www.instagram.com/fdr3k/",
     "active": true
   }
