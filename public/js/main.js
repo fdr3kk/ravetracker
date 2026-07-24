@@ -157,7 +157,7 @@ async function handleAuthSubmit(e) {
 
         // Success
         msgEl.className = 'auth-msg success';
-        msgEl.innerText = currentAuthMode === 'login' ? 'Login successful!' : 'Account registered & saved to users.xml!';
+        msgEl.innerText = currentAuthMode === 'login' ? 'Login successful!' : 'Account registered & saved to users.xlsx!';
 
         setCurrentUser(data.user);
         fetchAttendeesCount();

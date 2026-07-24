@@ -49,6 +49,17 @@ app.get('/api/attendees', (req, res) => {
     res.json({ count: attendingCount, totalUsers: users.length });
 });
 
+// View all users endpoint (sanitized without hash/salt)
+app.get('/api/users', (req, res) => {
+    const users = userStore.getUsers();
+    const sanitized = users.map(u => ({
+        username: u.username,
+        attending: u.attending,
+        registered_at: u.registered_at
+    }));
+    res.json(sanitized);
+});
+
 // DJ Profile Data API
 const DJ_PROFILES = {
     'feast-and-famine': {

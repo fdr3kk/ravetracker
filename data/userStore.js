@@ -1,10 +1,12 @@
 const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');
+const XLSX = require('xlsx');
 
-const XML_PATH = path.join(__dirname, 'users.xml');
+const XLSX_PATH = path.join(__dirname, 'users.xlsx');
+const SHEET_NAME = 'Users';
 
-// Helper to hash password with salt using SHA-256 + pbkdf2
+// Password hashing helper using SHA-256 + PBKDF2
 function hashPassword(password, salt) {
     if (!salt) {
         salt = crypto.randomBytes(16).toString('hex');
@@ -13,51 +15,72 @@ function hashPassword(password, salt) {
     return { hash, salt };
 }
 
-// Simple safe XML reader/parser for user objects
+// Read users array from Excel (.xlsx) file
 function getUsers() {
-    if (!fs.existsSync(XML_PATH)) {
+    if (!fs.existsSync(XLSX_PATH)) {
+        // Initialize starter Excel file if missing
+        const initialUsers = [
+            {
+                username: 'Underground_Raver',
+                password_hash: 'ef92b778bafe771e89245b89ecbc08a44a4e166c06659911881f383d4473e94f',
+                salt: '7f8a9b0c1d2e3f4a',
+                attending: true,
+                registered_at: '2026-07-24T23:40:00Z'
+            },
+            {
+                username: 'CyberRaver99',
+                password_hash: '4017b851833d602dd0ce553fcbee64edbdfed50baaddde01f14cfee350118e477b47569364823bd01ea9d070e72de719659ab8a674b97d4e95a0fd21d7caabdf',
+                salt: 'e9b08084b24ca708dcd121c0af5721f4',
+                attending: true,
+                registered_at: '2026-07-24T21:44:12.410Z'
+            }
+        ];
+        saveUsers(initialUsers);
+        return initialUsers;
+    }
+
+    try {
+        const workbook = XLSX.readFile(XLSX_PATH);
+        const worksheet = workbook.Sheets[SHEET_NAME] || workbook.Sheets[workbook.SheetNames[0]];
+        if (!worksheet) return [];
+
+        const rawData = XLSX.utils.sheet_to_json(worksheet);
+
+        return rawData.map(row => ({
+            username: String(row.username || row.Username || '').trim(),
+            password_hash: String(row.password_hash || row.Password_Hash || ''),
+            salt: String(row.salt || row.Salt || ''),
+            attending: row.attending === true || row.attending === 'true' || row.Attending === true || row.Attending === 'true',
+            registered_at: String(row.registered_at || row.Registered_At || '')
+        }));
+    } catch (err) {
+        console.error('Error reading users.xlsx:', err);
         return [];
     }
-    const xml = fs.readFileSync(XML_PATH, 'utf8');
-    const userBlocks = xml.match(/<user>([\s\S]*?)<\/user>/g) || [];
-    
-    return userBlocks.map(block => {
-        const username = (block.match(/<username>(.*?)<\/username>/) || [])[1] || '';
-        const password_hash = (block.match(/<password_hash>(.*?)<\/password_hash>/) || [])[1] || '';
-        const salt = (block.match(/<salt>(.*?)<\/salt>/) || [])[1] || '';
-        const attending = (block.match(/<attending>(.*?)<\/attending>/) || [])[1] === 'true';
-        const registered_at = (block.match(/<registered_at>(.*?)<\/registered_at>/) || [])[1] || '';
-        return { username, password_hash, salt, attending, registered_at };
-    });
 }
 
-// Helper to serialize users back to clean XML format
+// Write users array to Excel (.xlsx) file
 function saveUsers(users) {
-    let xml = `<?xml version="1.0" encoding="UTF-8"?>\n<users>\n`;
-    users.forEach(u => {
-        xml += `  <user>\n`;
-        xml += `    <username>${escapeXml(u.username)}</username>\n`;
-        xml += `    <password_hash>${escapeXml(u.password_hash)}</password_hash>\n`;
-        xml += `    <salt>${escapeXml(u.salt)}</salt>\n`;
-        xml += `    <attending>${u.attending ? 'true' : 'false'}</attending>\n`;
-        xml += `    <registered_at>${escapeXml(u.registered_at)}</registered_at>\n`;
-        xml += `  </user>\n`;
-    });
-    xml += `</users>\n`;
-    fs.writeFileSync(XML_PATH, xml, 'utf8');
-}
+    try {
+        const rows = users.map(u => ({
+            username: u.username,
+            password_hash: u.password_hash,
+            salt: u.salt,
+            attending: u.attending ? 'true' : 'false',
+            registered_at: u.registered_at
+        }));
 
-function escapeXml(unsafe) {
-    return unsafe.replace(/[<>&'"]/g, c => {
-        switch (c) {
-            case '<': return '&lt;';
-            case '>': return '&gt;';
-            case '&': return '&amp;';
-            case '\'': return '&apos;';
-            case '"': return '&quot;';
-            default: return c;
-        }
-    });
+        const worksheet = XLSX.utils.json_to_sheet(rows, {
+            header: ['username', 'password_hash', 'salt', 'attending', 'registered_at']
+        });
+        const workbook = XLSX.utils.book_new();
+        XLSX.utils.book_append_sheet(workbook, worksheet, SHEET_NAME);
+
+        XLSX.writeFile(workbook, XLSX_PATH);
+    } catch (err) {
+        console.error('Error writing users.xlsx:', err);
+        throw err;
+    }
 }
 
 function findUser(username) {
@@ -100,5 +123,6 @@ module.exports = {
     getUsers,
     findUser,
     registerUser,
-    authenticateUser
+    authenticateUser,
+    XLSX_PATH
 };
