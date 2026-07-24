@@ -43,168 +43,188 @@
         <a href="#"><span class="lang-ru">Правила</span><span class="lang-en">Rules</span></a>
     </div>
 
-    <!-- Dynamic Ad Banner Container -->
+    <!-- Dynamic Ad Banner Container (Top) -->
     <div id="ad-banner-container"></div>
 
-    <!-- Urgent Alert -->
-    <div class="alert">
-        [!] <span class="lang-ru">ОБЪЯВЛЕНИЕ: Локация будет раскрыта в 23:00. НЕ публикуйте адрес в открытом доступе!</span>
-        <span class="lang-en">ANNOUNCEMENT: Location drops at 23:00. DO NOT post the address publicly!</span>
-    </div>
-
-    <!-- RSVP / Want to Go Counter -->
-    <div style="background-color: #E5EDF4; border: 1px solid #A9B8C2; padding: 8px 12px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center;">
-        <div>
-            <strong>🔊 <span class="lang-ru">СПИСОК ИДУЩИХ НА РЕЙВ:</span><span class="lang-en">ATTENDING LIST:</span></strong>
-            <span style="margin-left: 8px;">
-                <span class="seeders" style="font-size: 13px;" id="attendees-count-display">...</span> 
-                <span class="lang-ru">человек хотят пойти!</span><span class="lang-en">ravers are going!</span>
-            </span>
+    <!-- Main Content with Side Ads -->
+    <div style="display: flex; gap: 15px;">
+        
+        <!-- Left Sidebar Ads -->
+        <div id="ads-left-sidebar" style="flex: 0 0 160px; display: flex; flex-direction: column; gap: 15px;">
+            <!-- Left ads will be dynamically inserted here -->
         </div>
-        <button id="btn-want-to-go" class="magnet-btn">
-            ⚡ <span class="lang-ru">Я хочу пойти! (Зарегистрироваться)</span><span class="lang-en">I Want To Go! (Register)</span>
-        </button>
-    </div>
 
-    <!-- FAQ / Info Table -->
-    <div class="cat-title">
-        <a href="#"><span class="lang-ru">Форум</span><span class="lang-en">Forum</span></a> &raquo; 
-        <a href="#"><span class="lang-ru">ВАЖНАЯ ИНФОРМАЦИЯ И FAQ</span><span class="lang-en">IMPORTANT INFO & FAQ</span></a>
-    </div>
-    
-    <table class="forumline">
-        <thead>
-            <tr>
-                <th width="4%"><span class="lang-ru">Статус</span><span class="lang-en">Status</span></th>
-                <th width="68%"><span class="lang-ru">Тема</span><span class="lang-en">Topic</span></th>
-                <th width="10%"><span class="lang-ru">Автор</span><span class="lang-en">Author</span></th>
-                <th width="8%"><span class="lang-ru">С</span><span class="lang-en">S</span></th>
-                <th width="10%"><span class="lang-ru">Л</span><span class="lang-en">L</span></th>
-            </tr>
-        </thead>
-        <tbody>
-            <!-- Pinned Post 1 -->
-            <tr class="row1">
-                <td align="center"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgZmlsbD0iI2NjMDAwMCI+PHBhdGggZD0iTTggMTVhNyA3IiBmaWxsPSJub25lIiBzdHJva2U9IiNjYzAwMDAiIHN0cm9rZS13aWR0aD0iMiIvPjwvc3ZnPg==" alt="pinned"></td>
-                <td>
-                    <span class="pinned"><span class="lang-ru">Прилеплена:</span><span class="lang-en">Pinned:</span></span>
-                    <a href="#" class="topic-title">
-                        <span class="lang-ru">[ВАЖНО] РАСКРЫТИЕ ЛОКАЦИИ СЕГОДНЯ В 23:00 (КООРДИНАТЫ)</span>
-                        <span class="lang-en">[IMPORTANT] LOCATION REVEAL TONIGHT AT 23:00 (COORDINATES)</span>
-                    </a>
-                </td>
-                <td align="center"><a href="#">Admin</a></td>
-                <td align="center" class="seeders">9999</td>
-                <td align="center" class="leechers">0</td>
-            </tr>
+        <!-- Main Content -->
+        <div style="flex: 1;">
 
-            <!-- Pinned Post 2 -->
-            <tr class="row2">
-                <td align="center"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgZmlsbD0iI2NjMDAwMCI+PHBhdGggZD0iTTggMTVhNyA3IiBmaWxsPSJub25lIiBzdHJva2U9IiNjYzAwMDAiIHN0cm9rZS13aWR0aD0iMiIvPjwvc3ZnPg==" alt="pinned"></td>
-                <td>
-                    <span class="pinned"><span class="lang-ru">Прилеплена:</span><span class="lang-en">Pinned:</span></span>
-                    <a href="#" class="topic-title">
-                        <span class="lang-ru">[ИНФО] Что брать с собой, бар, гардероб и правила рейва</span>
-                        <span class="lang-en">[INFO] Stuff to bring, bar, cloakroom and rave rules</span>
-                    </a>
-                </td>
-                <td align="center"><a href="#">Promoter01</a></td>
-                <td align="center" class="seeders">4512</td>
-                <td align="center" class="leechers">12</td>
-            </tr>
-        </tbody>
-    </table>
+            <!-- Urgent Alert -->
+            <div class="alert">
+                [!] <span class="lang-ru">ОБЪЯВЛЕНИЕ: Локация будет раскрыта в 23:00. НЕ публикуйте адрес в открытом доступе!</span>
+                <span class="lang-en">ANNOUNCEMENT: Location drops at 23:00. DO NOT post the address publicly!</span>
+            </div>
 
-    <!-- Stage 1 / Lineup Table -->
-    <div class="cat-title" id="lineup">
-        <a href="#"><span class="lang-ru">Форум</span><span class="lang-en">Forum</span></a> &raquo; 
-        <a href="#"><span class="lang-ru">ГЛАВНАЯ СЦЕНА (ЛАЙНАП)</span><span class="lang-en">MAIN STAGE (LINEUP)</span></a>
-    </div>
-    
-    <table class="forumline">
-        <thead>
-            <tr>
-                <th width="4%"><span class="lang-ru">Статус</span><span class="lang-en">Status</span></th>
-                <th width="50%"><span class="lang-ru">Тема / Артист (Нажмите для просмотра профиля)</span><span class="lang-en">Topic / Artist (Click to view profile)</span></th>
-                <th width="10%"><span class="lang-ru">Автор</span><span class="lang-en">Author</span></th>
-                <th width="8%">BPM</th>
-                <th width="10%"><span class="lang-ru">Время</span><span class="lang-en">Set Time</span></th>
-                <th width="5%"><span class="lang-ru">С</span><span class="lang-en">S</span></th>
-                <th width="5%"><span class="lang-ru">Л</span><span class="lang-en">L</span></th>
-            </tr>
-        </thead>
-        <tbody>
-            <!-- DJ 1 -->
-            <tr class="row1">
-                <td align="center"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgZmlsbD0iIzAwNjZjYyI+PHBhdGggZD0iTTggMTVhNyA3IiBmaWxsPSJub25lIiBzdHJva2U9IiMwMDY2Y2MiIHN0cm9rZS13aWR0aD0iMiIvPjwvc3ZnPg==" alt="dj"></td>
-                <td>
-                    <a href="dj.html?slug=feast-and-famine" class="topic-title">[Lineup] feast and famine</a>
-                </td>
-                <td align="center"><a href="#">BookingAgent</a></td>
-                <td align="center">135</td>
-                <td align="center">23:00 - 00:30</td>
-                <td align="center" class="seeders">402</td>
-                <td align="center" class="leechers">5</td>
-            </tr>
+            <!-- RSVP / Want to Go Counter -->
+            <div style="background-color: #E5EDF4; border: 1px solid #A9B8C2; padding: 8px 12px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center;">
+                <div>
+                    <strong>🔊 <span class="lang-ru">СПИСОК ИДУЩИХ НА РЕЙВ:</span><span class="lang-en">ATTENDING LIST:</span></strong>
+                    <span style="margin-left: 8px;">
+                        <span class="seeders" style="font-size: 13px;" id="attendees-count-display">...</span> 
+                        <span class="lang-ru">человек хотят пойти!</span><span class="lang-en">ravers are going!</span>
+                    </span>
+                </div>
+                <button id="btn-want-to-go" class="magnet-btn">
+                    ⚡ <span class="lang-ru">Я хочу пойти! (Зарегистрироваться)</span><span class="lang-en">I Want To Go! (Register)</span>
+                </button>
+            </div>
 
-            <!-- DJ 2 -->
-            <tr class="row2">
-                <td align="center"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgZmlsbD0iIzAwNjZjYyI+PHBhdGggZD0iTTggMTVhNyA3IiBmaWxsPSJub25lIiBzdHJva2U9IiMwMDY2Y2MiIHN0cm9rZS13aWR0aD0iMiIvPjwvc3ZnPg==" alt="dj"></td>
-                <td>
-                    <a href="dj.html?slug=sliskagekonica" class="topic-title">[Lineup] sliskagekonica</a>
-                </td>
-                <td align="center"><a href="#">BookingAgent</a></td>
-                <td align="center">140</td>
-                <td align="center">00:30 - 02:00</td>
-                <td align="center" class="seeders">650</td>
-                <td align="center" class="leechers">8</td>
-            </tr>
+            <!-- FAQ / Info Table -->
+            <div class="cat-title">
+                <a href="#"><span class="lang-ru">Форум</span><span class="lang-en">Forum</span></a> &raquo; 
+                <a href="#"><span class="lang-ru">ВАЖНАЯ ИНФОРМАЦИЯ И FAQ</span><span class="lang-en">IMPORTANT INFO & FAQ</span></a>
+            </div>
+            
+            <table class="forumline">
+                <thead>
+                    <tr>
+                        <th width="4%"><span class="lang-ru">Статус</span><span class="lang-en">Status</span></th>
+                        <th width="68%"><span class="lang-ru">Тема</span><span class="lang-en">Topic</span></th>
+                        <th width="10%"><span class="lang-ru">Автор</span><span class="lang-en">Author</span></th>
+                        <th width="8%"><span class="lang-ru">С</span><span class="lang-en">S</span></th>
+                        <th width="10%"><span class="lang-ru">Л</span><span class="lang-en">L</span></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Pinned Post 1 -->
+                    <tr class="row1">
+                        <td align="center"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgZmlsbD0iI2NjMDAwMCI+PHBhdGggZD0iTTggMTVhNyA3I[...]
+                        <td>
+                            <span class="pinned"><span class="lang-ru">Прилеплена:</span><span class="lang-en">Pinned:</span></span>
+                            <a href="#" class="topic-title">
+                                <span class="lang-ru">[ВАЖНО] РАСКРЫТИЕ ЛОКАЦИИ СЕГОДНЯ В 23:00 (КООРДИНАТЫ)</span>
+                                <span class="lang-en">[IMPORTANT] LOCATION REVEAL TONIGHT AT 23:00 (COORDINATES)</span>
+                            </a>
+                        </td>
+                        <td align="center"><a href="#">Admin</a></td>
+                        <td align="center" class="seeders">9999</td>
+                        <td align="center" class="leechers">0</td>
+                    </tr>
 
-            <!-- DJ 3 -->
-            <tr class="row1">
-                <td align="center"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgZmlsbD0iIzAwNjZjYyI+PHBhdGggZD0iTTggMTVhNyA3IiBmaWxsPSJub25lIiBzdHJva2U9IiMwMDY2Y2MiIHN0cm9rZS13aWR0aD0iMiIvPjwvc3ZnPg==" alt="dj"></td>
-                <td>
-                    <a href="dj.html?slug=fred3000" class="topic-title">[Lineup] fred3000</a>
-                </td>
-                <td align="center"><a href="#">BookingAgent</a></td>
-                <td align="center">145</td>
-                <td align="center">02:00 - 03:30</td>
-                <td align="center" class="seeders">890</td>
-                <td align="center" class="leechers">15</td>
-            </tr>
+                    <!-- Pinned Post 2 -->
+                    <tr class="row2">
+                        <td align="center"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgZmlsbD0iI2NjMDAwMCI+PHBhdGggZD0iTTggMTVhNyA3I[...]
+                        <td>
+                            <span class="pinned"><span class="lang-ru">Прилеплена:</span><span class="lang-en">Pinned:</span></span>
+                            <a href="#" class="topic-title">
+                                <span class="lang-ru">[ИНФО] Что брать с собой, бар, гардероб и правила рейва</span>
+                                <span class="lang-en">[INFO] Stuff to bring, bar, cloakroom and rave rules</span>
+                            </a>
+                        </td>
+                        <td align="center"><a href="#">Promoter01</a></td>
+                        <td align="center" class="seeders">4512</td>
+                        <td align="center" class="leechers">12</td>
+                    </tr>
+                </tbody>
+            </table>
 
-            <!-- DJ 4 -->
-            <tr class="row2">
-                <td align="center"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgZmlsbD0iIzAwNjZjYyI+PHBhdGggZD0iTTggMTVhNyA3IiBmaWxsPSJub25lIiBzdHJva2U9IiMwMDY2Y2MiIHN0cm9rZS13aWR0aD0iMiIvPjwvc3ZnPg==" alt="dj"></td>
-                <td>
-                    <a href="dj.html?slug=tmx-boom" class="topic-title">[Lineup] tmx boom</a>
-                </td>
-                <td align="center"><a href="#">BookingAgent</a></td>
-                <td align="center">150</td>
-                <td align="center">03:30 - 05:00</td>
-                <td align="center" class="seeders">1120</td>
-                <td align="center" class="leechers">22</td>
-            </tr>
+            <!-- Stage 1 / Lineup Table -->
+            <div class="cat-title" id="lineup">
+                <a href="#"><span class="lang-ru">Форум</span><span class="lang-en">Forum</span></a> &raquo; 
+                <a href="#"><span class="lang-ru">ГЛАВНАЯ СЦЕНА (ЛАЙНАП)</span><span class="lang-en">MAIN STAGE (LINEUP)</span></a>
+            </div>
+            
+            <table class="forumline">
+                <thead>
+                    <tr>
+                        <th width="4%"><span class="lang-ru">Статус</span><span class="lang-en">Status</span></th>
+                        <th width="50%"><span class="lang-ru">Тема / Артист (Нажмите для просмотра профиля)</span><span class="lang-en">Topic / Artist (Click to view profile)</span></th>
+                        <th width="10%"><span class="lang-ru">Автор</span><span class="lang-en">Author</span></th>
+                        <th width="8%">BPM</th>
+                        <th width="10%"><span class="lang-ru">Время</span><span class="lang-en">Set Time</span></th>
+                        <th width="5%"><span class="lang-ru">С</span><span class="lang-en">S</span></th>
+                        <th width="5%"><span class="lang-ru">Л</span><span class="lang-en">L</span></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- DJ 1 -->
+                    <tr class="row1">
+                        <td align="center"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgZmlsbD0iIzAwNjZjYyI+PHBhdGggZD0iTTggMTVhNyA3I[...]
+                        <td>
+                            <a href="dj.html?slug=feast-and-famine" class="topic-title">[Lineup] feast and famine</a>
+                        </td>
+                        <td align="center"><a href="#">BookingAgent</a></td>
+                        <td align="center">135</td>
+                        <td align="center">23:00 - 00:30</td>
+                        <td align="center" class="seeders">402</td>
+                        <td align="center" class="leechers">5</td>
+                    </tr>
 
-            <!-- DJ 5 -->
-            <tr class="row1">
-                <td align="center"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgZmlsbD0iI2NjMDAwMCI+PHBhdGggZD0iTTggMTVhNyA3IiBmaWxsPSJub25lIiBzdHJva2U9IiNjYzAwMDAiIHN0cm9rZS13aWR0aD0iMiIvPjwvc3ZnPg==" alt="dj"></td>
-                <td>
-                    <a href="dj.html?slug=dj-analkanal" class="topic-title">[Lineup] dj analkanal</a>
-                </td>
-                <td align="center"><a href="#">BookingAgent</a></td>
-                <td align="center">160+</td>
-                <td align="center">05:00 - END</td>
-                <td align="center" class="seeders">1450</td>
-                <td align="center" class="leechers">40</td>
-            </tr>
-        </tbody>
-    </table>
+                    <!-- DJ 2 -->
+                    <tr class="row2">
+                        <td align="center"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgZmlsbD0iIzAwNjZjYyI+PHBhdGggZD0iTTggMTVhNyA3I[...]
+                        <td>
+                            <a href="dj.html?slug=sliskagekonica" class="topic-title">[Lineup] sliskagekonica</a>
+                        </td>
+                        <td align="center"><a href="#">BookingAgent</a></td>
+                        <td align="center">140</td>
+                        <td align="center">00:30 - 02:00</td>
+                        <td align="center" class="seeders">650</td>
+                        <td align="center" class="leechers">8</td>
+                    </tr>
 
-    <div style="text-align: center; color: #666; margin-top: 20px; font-size: 10px;">
-        RaveTracker.org © 2026<br>
-        <span class="lang-ru">Создано андеграунд культурой</span>
-        <span class="lang-en">Powered by Underground Culture</span>
+                    <!-- DJ 3 -->
+                    <tr class="row1">
+                        <td align="center"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgZmlsbD0iIzAwNjZjYyI+PHBhdGggZD0iTTggMTVhNyA3I[...]
+                        <td>
+                            <a href="dj.html?slug=fred3000" class="topic-title">[Lineup] fred3000</a>
+                        </td>
+                        <td align="center"><a href="#">BookingAgent</a></td>
+                        <td align="center">145</td>
+                        <td align="center">02:00 - 03:30</td>
+                        <td align="center" class="seeders">890</td>
+                        <td align="center" class="leechers">15</td>
+                    </tr>
+
+                    <!-- DJ 4 -->
+                    <tr class="row2">
+                        <td align="center"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgZmlsbD0iIzAwNjZjYyI+PHBhdGggZD0iTTggMTVhNyA3I[...]
+                        <td>
+                            <a href="dj.html?slug=tmx-boom" class="topic-title">[Lineup] tmx boom</a>
+                        </td>
+                        <td align="center"><a href="#">BookingAgent</a></td>
+                        <td align="center">150</td>
+                        <td align="center">03:30 - 05:00</td>
+                        <td align="center" class="seeders">1120</td>
+                        <td align="center" class="leechers">22</td>
+                    </tr>
+
+                    <!-- DJ 5 -->
+                    <tr class="row1">
+                        <td align="center"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgZmlsbD0iI2NjMDAwMCI+PHBhdGggZD0iTTggMTVhNyA3I[...]
+                        <td>
+                            <a href="dj.html?slug=dj-analkanal" class="topic-title">[Lineup] dj analkanal</a>
+                        </td>
+                        <td align="center"><a href="#">BookingAgent</a></td>
+                        <td align="center">160+</td>
+                        <td align="center">05:00 - END</td>
+                        <td align="center" class="seeders">1450</td>
+                        <td align="center" class="leechers">40</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div style="text-align: center; color: #666; margin-top: 20px; font-size: 10px;">
+                RaveTracker.org © 2026<br>
+                <span class="lang-ru">Создано андеграунд культурой</span>
+                <span class="lang-en">Powered by Underground Culture</span>
+            </div>
+
+        </div>
+
+        <!-- Right Sidebar Ads -->
+        <div id="ads-right-sidebar" style="flex: 0 0 160px; display: flex; flex-direction: column; gap: 15px;">
+            <!-- Right ads will be dynamically inserted here -->
+        </div>
+
     </div>
 
 </div>

@@ -209,43 +209,107 @@ async function fetchAttendeesCount() {
 
 // Ads Loader (Supports both Server API & GitHub Pages static path)
 async function loadAds() {
-    const container = document.getElementById('ad-banner-container');
-    if (!container) return;
-
     try {
         let ads = [];
+        
+        // Try to fetch from API first
         try {
             const response = await fetch('/api/ads');
             if (response.ok) {
                 ads = await response.json();
             }
-        } catch (e) {}
+        } catch (e) {
+            console.log('API ads unavailable, trying static fallback');
+        }
 
+        // Static GitHub Pages path fallback
         if (!ads || ads.length === 0) {
-            // Static GitHub Pages path fallback
-            const response = await fetch('ads/ads.json');
-            if (response.ok) {
-                ads = await response.json();
+            try {
+                const response = await fetch('ads/ads.json');
+                if (response.ok) {
+                    ads = await response.json();
+                }
+            } catch (e) {
+                console.log('Static ads fallback failed');
             }
         }
 
-        const activeAds = ads.filter(ad => ad.active);
-        if (activeAds.length === 0) return;
+        if (!ads || ads.length === 0) return;
 
-        const ad = activeAds[Math.floor(Math.random() * activeAds.length)];
-        const target = ad.targetUrl || '#';
+        // Render Banner Ads (type: 'banner')
+        const bannerAds = ads.filter(ad => ad.active && (ad.type === 'banner' || ad.type === undefined));
+        renderBannerAds(bannerAds);
 
-        container.innerHTML = `
-            <div class="ad-slot">
-                <a href="${target}" target="_blank" rel="noopener" title="${escapeHtml(ad.title || 'Advertisement')}">
-                    <img src="${ad.image}" alt="${escapeHtml(ad.title || 'Ad Banner')}">
-                </a>
-                <div class="ad-label">Реклама / Advertisement</div>
-            </div>
-        `;
+        // Render Sidebar Ads (type: 'sidebar')
+        const sidebarAds = ads.filter(ad => ad.active && ad.type === 'sidebar');
+        renderSidebarAds(sidebarAds);
+
     } catch (err) {
         console.error('Failed to load ads:', err);
     }
+}
+
+// Render Banner Ads
+function renderBannerAds(bannerAds) {
+    const container = document.getElementById('ad-banner-container');
+    if (!container || !bannerAds || bannerAds.length === 0) return;
+
+    const ad = bannerAds[Math.floor(Math.random() * bannerAds.length)];
+    const target = ad.targetUrl || '#';
+
+    container.innerHTML = `
+        <div class="ad-slot banner-ad">
+            <a href="${target}" target="_blank" rel="noopener noreferrer" title="${escapeHtml(ad.title || 'Advertisement')}">
+                <img src="${escapeHtml(ad.image)}" alt="${escapeHtml(ad.title || 'Ad Banner')}">
+            </a>
+            <div class="ad-label">Реклама / Advertisement</div>
+        </div>
+    `;
+}
+
+// Render Sidebar Ads
+function renderSidebarAds(sidebarAds) {
+    if (!sidebarAds || sidebarAds.length === 0) return;
+
+    const leftContainer = document.getElementById('ads-left-sidebar');
+    const rightContainer = document.getElementById('ads-right-sidebar');
+
+    // Split ads: half to left, half to right
+    const midpoint = Math.ceil(sidebarAds.length / 2);
+    const leftAds = sidebarAds.slice(0, midpoint);
+    const rightAds = sidebarAds.slice(midpoint);
+
+    if (leftContainer) {
+        leftContainer.innerHTML = '';
+        leftAds.forEach(ad => {
+            const adElement = createSidebarAdElement(ad);
+            leftContainer.appendChild(adElement);
+        });
+    }
+
+    if (rightContainer) {
+        rightContainer.innerHTML = '';
+        rightAds.forEach(ad => {
+            const adElement = createSidebarAdElement(ad);
+            rightContainer.appendChild(adElement);
+        });
+    }
+}
+
+// Create Sidebar Ad Element
+function createSidebarAdElement(ad) {
+    const target = ad.targetUrl || '#';
+    
+    const wrapper = document.createElement('div');
+    wrapper.className = 'sidebar-ad';
+    wrapper.innerHTML = `
+        <a href="${target}" target="_blank" rel="noopener noreferrer" title="${escapeHtml(ad.title || 'Advertisement')}">
+            <img src="${escapeHtml(ad.image)}" alt="${escapeHtml(ad.title || 'Side Ad')}">
+        </a>
+        <div class="sidebar-ad-label">Реклама / Ad</div>
+    `;
+    
+    return wrapper;
 }
 
 function escapeHtml(str) {
