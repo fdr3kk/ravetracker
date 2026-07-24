@@ -183,7 +183,9 @@ a:hover {
     display: block;
 }
 .ad-slot.banner-ad img {
+    width: 728px;
     max-width: 100%;
+    height: auto;
 }
 .ad-slot.side-ad img {
     width: 160px;

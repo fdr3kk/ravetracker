@@ -2,7 +2,7 @@
   {
     "id": "ad-001",
     "title": "Bazinga",
-    "image": "https://loremflickr.com/728/90/festival,music",
+    "image": "ads/placeholder_ad.svg",
     "targetUrl": "https://example.com/festival",
     "active": true,
     "position": "top"
@@ -10,7 +10,7 @@
   {
     "id": "ad-002",
     "title": "Rick Rubin Nyakkah",
-    "image": "https://loremflickr.com/160/200/dj,music",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/4/4d/Rick_Rubin_%28SXSW_2014%29.jpg",
     "targetUrl": "https://www.instagram.com/fdr3k/",
     "active": true,
     "position": "sidebar"
