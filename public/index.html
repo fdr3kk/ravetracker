@@ -14,18 +14,15 @@
         🌐 <span class="lang-ru">Перевести на английский</span><span class="lang-en">Translate to Russian</span>
     </button>
 
-    <!-- User Bar -->
-    <div style="text-align: right; margin-bottom: 5px; color: #555;">
-        <span class="lang-ru">Вы вошли как:</span><span class="lang-en">Logged in as:</span> <strong>Underground_Raver</strong> | 
-        <a href="#"><span class="lang-ru">Сообщения (1)</span><span class="lang-en">Messages (1)</span></a> | 
-        <a href="#"><span class="lang-ru">Настройки</span><span class="lang-en">Settings</span></a> | 
-        <a href="#"><span class="lang-ru">Выход</span><span class="lang-en">Log out</span></a>
+    <!-- User Bar with Login / Greeting State -->
+    <div id="user-bar" style="text-align: right; margin-bottom: 5px; color: #555;">
+        <!-- Dynamic greeting populated by main.js -->
     </div>
 
     <!-- Header -->
     <div id="header">
         <div>
-            <div class="logo">RaveTracker.org</div>
+            <a href="index.html" style="text-decoration: none;"><div class="logo">RaveTracker.org</div></a>
             <span class="logo-sub">
                 <span class="lang-ru">Крупнейший каталог андеграундной электронной музыки</span>
                 <span class="lang-en">The largest underground electronic music directory</span>
@@ -41,7 +38,7 @@
     <div id="top-menu">
         <a href="#"><span class="lang-ru">Трекер</span><span class="lang-en">Tracker</span></a> |
         <a href="#"><span class="lang-ru">Секретные локации</span><span class="lang-en">Secret Locations</span></a> |
-        <a href="#"><span class="lang-ru">Лайнапы</span><span class="lang-en">Lineups</span></a> |
+        <a href="#lineup"><span class="lang-ru">Лайнапы</span><span class="lang-en">Lineups</span></a> |
         <a href="#"><span class="lang-ru">FAQ по снижению вреда</span><span class="lang-en">Harm Reduction FAQ</span></a> |
         <a href="#"><span class="lang-ru">Правила</span><span class="lang-en">Rules</span></a>
     </div>
@@ -53,6 +50,20 @@
     <div class="alert">
         [!] <span class="lang-ru">ОБЪЯВЛЕНИЕ: Локация будет раскрыта в 23:00. НЕ публикуйте адрес в открытом доступе!</span>
         <span class="lang-en">ANNOUNCEMENT: Location drops at 23:00. DO NOT post the address publicly!</span>
+    </div>
+
+    <!-- RSVP / Want to Go Counter -->
+    <div style="background-color: #E5EDF4; border: 1px solid #A9B8C2; padding: 8px 12px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center;">
+        <div>
+            <strong>🔊 <span class="lang-ru">СПИСОК ИДУЩИХ НА РЕЙВ (XML БД):</span><span class="lang-en">ATTENDING LIST (XML DB):</span></strong>
+            <span style="margin-left: 8px;">
+                <span class="seeders" style="font-size: 13px;" id="attendees-count-display">...</span> 
+                <span class="lang-ru">человек хотят пойти!</span><span class="lang-en">ravers are going!</span>
+            </span>
+        </div>
+        <button id="btn-want-to-go" class="magnet-btn">
+            ⚡ <span class="lang-ru">Я хочу пойти! (Зарегистрироваться)</span><span class="lang-en">I Want To Go! (Register)</span>
+        </button>
     </div>
 
     <!-- FAQ / Info Table -->
@@ -105,7 +116,7 @@
     </table>
 
     <!-- Stage 1 / Lineup Table -->
-    <div class="cat-title">
+    <div class="cat-title" id="lineup">
         <a href="#"><span class="lang-ru">Форум</span><span class="lang-en">Forum</span></a> &raquo; 
         <a href="#"><span class="lang-ru">ГЛАВНАЯ СЦЕНА (ЛАЙНАП)</span><span class="lang-en">MAIN STAGE (LINEUP)</span></a>
     </div>
@@ -114,7 +125,7 @@
         <thead>
             <tr>
                 <th width="4%"><span class="lang-ru">Статус</span><span class="lang-en">Status</span></th>
-                <th width="50%"><span class="lang-ru">Тема / Артист</span><span class="lang-en">Topic / Artist</span></th>
+                <th width="50%"><span class="lang-ru">Тема / Артист (Нажмите для просмотра профиля)</span><span class="lang-en">Topic / Artist (Click to view profile)</span></th>
                 <th width="10%"><span class="lang-ru">Автор</span><span class="lang-en">Author</span></th>
                 <th width="8%">BPM</th>
                 <th width="10%"><span class="lang-ru">Время</span><span class="lang-en">Set Time</span></th>
@@ -127,7 +138,7 @@
             <tr class="row1">
                 <td align="center"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgZmlsbD0iIzAwNjZjYyI+PHBhdGggZD0iTTggMTVhNyA3IDAgMSAwIDAtMTQgNyA3IDAgMCAwIDAgMTR6Ii8+PC9zdmc+" alt="Read"></td>
                 <td>
-                    <a href="#" class="topic-title">[Lineup] feast and famine</a>
+                    <a href="dj.html?slug=feast-and-famine" class="topic-title">[Lineup] feast and famine</a>
                 </td>
                 <td align="center"><a href="#">BookingAgent</a></td>
                 <td align="center">135</td>
@@ -140,7 +151,7 @@
             <tr class="row2">
                 <td align="center"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgZmlsbD0iIzAwNjZjYyI+PHBhdGggZD0iTTggMTVhNyA3IDAgMSAwIDAtMTQgNyA3IDAgMCAwIDAgMTR6Ii8+PC9zdmc+" alt="Read"></td>
                 <td>
-                    <a href="#" class="topic-title">[Lineup] sliskagekonica</a>
+                    <a href="dj.html?slug=sliskagekonica" class="topic-title">[Lineup] sliskagekonica</a>
                 </td>
                 <td align="center"><a href="#">BookingAgent</a></td>
                 <td align="center">140</td>
@@ -153,7 +164,7 @@
             <tr class="row1">
                 <td align="center"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgZmlsbD0iIzAwNjZjYyI+PHBhdGggZD0iTTggMTVhNyA3IDAgMSAwIDAtMTQgNyA3IDAgMCAwIDAgMTR6Ii8+PC9zdmc+" alt="Read"></td>
                 <td>
-                    <a href="#" class="topic-title">[Lineup] fred3000</a>
+                    <a href="dj.html?slug=fred3000" class="topic-title">[Lineup] fred3000</a>
                 </td>
                 <td align="center"><a href="#">BookingAgent</a></td>
                 <td align="center">145</td>
@@ -166,7 +177,7 @@
             <tr class="row2">
                 <td align="center"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgZmlsbD0iIzAwNjZjYyI+PHBhdGggZD0iTTggMTVhNyA3IDAgMSAwIDAtMTQgNyA3IDAgMCAwIDAgMTR6Ii8+PC9zdmc+" alt="Read"></td>
                 <td>
-                    <a href="#" class="topic-title">[Lineup] tmx boom</a>
+                    <a href="dj.html?slug=tmx-boom" class="topic-title">[Lineup] tmx boom</a>
                 </td>
                 <td align="center"><a href="#">BookingAgent</a></td>
                 <td align="center">150</td>
@@ -179,7 +190,7 @@
             <tr class="row1">
                 <td align="center"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgZmlsbD0iI2NjMDAwMCI+PHBhdGggZD0iTTggMTVhNyA3IDAgMSAwIDAtMTQgNyA3IDAgMCAwIDAgMTR6Ii8+PC9zdmc+" alt="Hot"></td>
                 <td>
-                    <a href="#" class="topic-title">[Lineup] dj analkanal</a>
+                    <a href="dj.html?slug=dj-analkanal" class="topic-title">[Lineup] dj analkanal</a>
                 </td>
                 <td align="center"><a href="#">BookingAgent</a></td>
                 <td align="center">160+</td>
@@ -196,6 +207,46 @@
         <span class="lang-en">Powered by Underground Culture</span>
     </div>
 
+</div>
+
+<!-- Authentication / RSVP Registration Modal -->
+<div id="auth-modal" class="modal-overlay">
+    <div class="modal-box">
+        <div class="modal-header">
+            <span id="modal-title-text"><span class="lang-ru">Вход / Регистрация идущих</span><span class="lang-en">Login / RSVP Registration</span></span>
+            <span class="modal-close" onclick="closeAuthModal()">&times;</span>
+        </div>
+        <div class="modal-body">
+            <div style="display: flex; margin-bottom: 10px; border-bottom: 1px solid #ddd;">
+                <button id="tab-login" class="translate-btn" style="flex:1; margin:0;" onclick="switchAuthTab('login')">
+                    <span class="lang-ru">Вход</span><span class="lang-en">Login</span>
+                </button>
+                <button id="tab-register" class="translate-btn" style="flex:1; margin:0; background:#E5EDF4;" onclick="switchAuthTab('register')">
+                    <span class="lang-ru">Я иду! (Регистрация)</span><span class="lang-en">RSVP (Register)</span>
+                </button>
+            </div>
+
+            <form id="auth-form" onsubmit="handleAuthSubmit(event)">
+                <label for="auth-username"><span class="lang-ru">Имя пользователя (Логин):</span><span class="lang-en">Username:</span></label>
+                <input type="text" id="auth-username" required placeholder="raver_2026">
+
+                <label for="auth-password"><span class="lang-ru">Пароль:</span><span class="lang-en">Password:</span></label>
+                <input type="password" id="auth-password" required placeholder="••••••••">
+
+                <div style="text-align: right; margin-top: 10px;">
+                    <button type="button" class="translate-btn" onclick="closeAuthModal()"><span class="lang-ru">Отмена</span><span class="lang-en">Cancel</span></button>
+                    <button type="submit" class="btn-submit" id="auth-submit-btn"><span class="lang-ru">Войти</span><span class="lang-en">Submit</span></button>
+                </div>
+            </form>
+
+            <div id="auth-msg" class="auth-msg"></div>
+            
+            <div style="margin-top: 12px; font-size: 10px; color: #777; border-top: 1px dashed #ccc; padding-top: 5px;">
+                🔒 <span class="lang-ru">Данные сохраняются в защищенном XML-файле БД на сервере с хешированием паролей.</span>
+                <span class="lang-en">User accounts are stored in a secured server-side XML database with hashed passwords.</span>
+            </div>
+        </div>
+    </div>
 </div>
 
 <script src="js/main.js"></script>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RaveTracker.org - DJ Profile</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<div id="wrap">
+    
+    <button class="translate-btn">
+        🌐 <span class="lang-ru">Перевести на английский</span><span class="lang-en">Translate to Russian</span>
+    </button>
+
+    <!-- User Bar -->
+    <div id="user-bar" style="text-align: right; margin-bottom: 5px; color: #555;">
+        <span class="lang-ru">Загрузка состояния...</span>
+    </div>
+
+    <!-- Header -->
+    <div id="header">
+        <div>
+            <a href="index.html" style="text-decoration: none;"><div class="logo">RaveTracker.org</div></a>
+            <span class="logo-sub">
+                <span class="lang-ru">Крупнейший каталог андеграундной электронной музыки</span>
+                <span class="lang-en">The largest underground electronic music directory</span>
+            </span>
+        </div>
+        <div class="search-box">
+            <input type="text" placeholder="Поиск лайнапа, локации..." id="search-input">
+            <input type="submit" value="Поиск" id="search-btn">
+        </div>
+    </div>
+
+    <!-- Top Menu -->
+    <div id="top-menu">
+        <a href="index.html"><span class="lang-ru">&laquo; Вернуться в Трекер</span><span class="lang-en">&laquo; Back to Tracker</span></a> |
+        <a href="index.html#lineup"><span class="lang-ru">Все Лайнапы</span><span class="lang-en">All Lineups</span></a> |
+        <a href="#"><span class="lang-ru">Правила</span><span class="lang-en">Rules</span></a>
+    </div>
+
+    <!-- Breadcrumb Category Title -->
+    <div class="cat-title">
+        <a href="index.html"><span class="lang-ru">Форум</span><span class="lang-en">Forum</span></a> &raquo; 
+        <a href="index.html#lineup"><span class="lang-ru">ГЛАВНАЯ СЦЕНА</span><span class="lang-en">MAIN STAGE</span></a> &raquo; 
+        <span id="dj-breadcrumb-name">DJ Profile</span>
+    </div>
+    
+    <!-- DJ Profile Content Table -->
+    <table class="forumline" id="dj-profile-table">
+        <thead>
+            <tr>
+                <th colspan="2" style="text-align: left; padding-left: 10px;">
+                    <span class="lang-ru">ПРОФИЛЬ АРТИСТА / ТЕМА ЛАЙНАПА</span>
+                    <span class="lang-en">ARTIST PROFILE / LINEUP TOPIC</span>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="row1">
+                <td width="25%" style="font-weight: bold; background-color: #EFEFEF;">
+                    <span class="lang-ru">Имя артиста:</span><span class="lang-en">Artist Name:</span>
+                </td>
+                <td width="75%"><h2 id="dj-name" style="margin:0; font-size:16px; color:#1A3665;">Loading...</h2></td>
+            </tr>
+            <tr class="row2">
+                <td style="font-weight: bold; background-color: #EFEFEF;">
+                    <span class="lang-ru">Жанр / Звучание:</span><span class="lang-en">Genre / Sound:</span>
+                </td>
+                <td id="dj-genre">...</td>
+            </tr>
+            <tr class="row1">
+                <td style="font-weight: bold; background-color: #EFEFEF;">
+                    <span class="lang-ru">Время выступления:</span><span class="lang-en">Set Time:</span>
+                </td>
+                <td id="dj-set-time">...</td>
+            </tr>
+            <tr class="row2">
+                <td style="font-weight: bold; background-color: #EFEFEF;">
+                    <span class="lang-ru">Темп (BPM):</span><span class="lang-en">Tempo (BPM):</span>
+                </td>
+                <td id="dj-bpm">...</td>
+            </tr>
+            <tr class="row1">
+                <td style="font-weight: bold; background-color: #EFEFEF;">
+                    <span class="lang-ru">Сцена:</span><span class="lang-en">Stage:</span>
+                </td>
+                <td id="dj-stage">...</td>
+            </tr>
+            <tr class="row2">
+                <td style="font-weight: bold; background-color: #EFEFEF;">
+                    <span class="lang-ru">Описание / Био:</span><span class="lang-en">Bio / Description:</span>
+                </td>
+                <td>
+                    <p id="dj-bio" style="margin: 5px 0; line-height: 1.4;">...</p>
+                </td>
+            </tr>
+            <tr class="row1">
+                <td style="font-weight: bold; background-color: #EFEFEF;">
+                    <span class="lang-ru">Сэмплы / Треклист:</span><span class="lang-en">Tracks / Sample Set:</span>
+                </td>
+                <td>
+                    <ul id="dj-tracks" style="margin: 5px 0; padding-left: 20px;"></ul>
+                    <div style="margin-top: 10px; background: #E5EDF4; border: 1px solid #A9B8C2; padding: 8px;">
+                        🎧 <strong><span class="lang-ru">Аудио-превью:</span><span class="lang-en">Audio Preview:</span></strong>
+                        <div style="font-size: 10px; color: #555; margin-top: 4px;">
+                            [<span class="lang-ru">Демо сет 128kbps mp3 stream ready</span><span class="lang-en">Demo set 128kbps mp3 stream ready</span>]
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr class="row2">
+                <td style="font-weight: bold; background-color: #EFEFEF;">
+                    <span class="lang-ru">Статистика Торрента:</span><span class="lang-en">Torrent Stats:</span>
+                </td>
+                <td>
+                    <span class="seeders">Сидры (Seeders): <span id="dj-seeders">0</span></span> | 
+                    <span class="leechers">Личи (Leechers): <span id="dj-leechers">0</span></span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div style="text-align: center; margin: 20px 0;">
+        <a href="index.html" class="magnet-btn" style="padding: 6px 15px; font-size: 12px;">
+            &laquo; <span class="lang-ru">Вернуться к списку участников</span><span class="lang-en">Return to Full Lineup</span>
+        </a>
+    </div>
+
+    <div style="text-align: center; color: #666; margin-top: 20px; font-size: 10px;">
+        RaveTracker.org © 2026<br>
+        <span class="lang-ru">Создано андеграунд культурой</span>
+        <span class="lang-en">Powered by Underground Culture</span>
+    </div>
+
+</div>
+
+<script src="js/main.js"></script>
+<script src="js/dj.js"></script>
+</body>
+</html>
