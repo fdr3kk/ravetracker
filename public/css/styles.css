@@ -1,0 +1,165 @@
+body {
+    font-family: verdana, arial, helvetica, sans-serif;
+    background-color: #E2E2E2;
+    color: #000000;
+    margin: 0;
+    padding: 10px;
+    font-size: 11px;
+}
+a {
+    color: #004C99;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+    color: #ff4500;
+}
+#wrap {
+    width: 95%;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #FFFFFF;
+    border: 1px solid #A9B8C2;
+    padding: 5px;
+}
+
+/* Language Toggle Styles */
+.lang-en { display: none; }
+.show-en .lang-en { display: inline; }
+.show-en .lang-ru { display: none; }
+
+.translate-btn {
+    background-color: #f0f0f0;
+    border: 1px solid #999;
+    padding: 5px 10px;
+    font-size: 11px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    font-family: verdana, arial, sans-serif;
+}
+.translate-btn:hover {
+    background-color: #e0e0e0;
+}
+
+/* Header */
+#header {
+    background-color: #C3D3E4;
+    border: 1px solid #A9B8C2;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+}
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #1A3665;
+    letter-spacing: -1px;
+}
+.logo-sub {
+    font-size: 10px;
+    color: #555;
+    display: block;
+}
+.search-box {
+    background: #E5EDF4;
+    padding: 5px;
+    border: 1px solid #A9B8C2;
+}
+.search-box input[type="text"] {
+    width: 200px;
+    font-size: 11px;
+    padding: 2px;
+    border: 1px solid #999;
+}
+.search-box input[type="submit"] {
+    font-size: 11px;
+    background: #ddd;
+    border: 1px solid #999;
+    cursor: pointer;
+}
+
+/* Top Menu */
+#top-menu {
+    background-color: #E5EDF4;
+    border: 1px solid #A9B8C2;
+    padding: 5px 10px;
+    margin-bottom: 15px;
+    font-weight: bold;
+    text-align: center;
+}
+#top-menu a {
+    margin: 0 15px;
+}
+
+/* Forum Tables */
+.forumline {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #A9B8C2;
+    margin-bottom: 20px;
+}
+.forumline th {
+    background-color: #C3D3E4;
+    color: #1A3665;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 5px;
+    border: 1px solid #A9B8C2;
+    text-align: center;
+}
+.forumline td {
+    padding: 6px;
+    border: 1px solid #A9B8C2;
+}
+.row1 { background-color: #F8F8F8; }
+.row2 { background-color: #EFEFEF; }
+.row3 { background-color: #E6E6E6; text-align: center; font-weight: bold;}
+
+.cat-title {
+    background-color: #DDE6EF;
+    font-weight: bold;
+    font-size: 12px;
+    padding: 5px;
+    border: 1px solid #A9B8C2;
+}
+
+.topic-title {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.pinned {
+    color: #8a3a00;
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.seeders { color: #008000; font-weight: bold; }
+.leechers { color: #CC0000; font-weight: bold; }
+
+/* Specific Rave Elements */
+.magnet-btn {
+    background-color: #C3D3E4;
+    border: 1px outset #A9B8C2;
+    padding: 2px 5px;
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    cursor: pointer;
+}
+.magnet-btn:hover {
+    background-color: #A9B8C2;
+}
+
+.alert {
+    background-color: #FFF0F0;
+    border: 1px solid #CC0000;
+    color: #CC0000;
+    padding: 10px;
+    margin-bottom: 15px;
+    text-align: center;
+    font-weight: bold;
+}
