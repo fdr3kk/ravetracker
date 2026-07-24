@@ -1,0 +1,18 @@
+[
+  {
+    "id": "ad-001",
+    "title": "Underground Vinyl Store",
+    "image": "ads/placeholder_ad.svg",
+    "targetUrl": "https://example.com/underground-vinyl",
+    "active": true,
+    "position": "top"
+  },
+  {
+    "id": "ad-002",
+    "title": "Modular Synth Workshop",
+    "image": "ads/placeholder_ad.svg",
+    "targetUrl": "https://example.com/synth-workshop",
+    "active": true,
+    "position": "top"
+  }
+]

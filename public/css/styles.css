@@ -163,3 +163,29 @@ a:hover {
     text-align: center;
     font-weight: bold;
 }
+
+/* Ad Banner Styles */
+#ad-banner-container {
+    margin-bottom: 15px;
+    text-align: center;
+}
+.ad-slot {
+    display: inline-block;
+    max-width: 100%;
+    border: 1px solid #A9B8C2;
+    background-color: #F8F8F8;
+    padding: 4px;
+    box-sizing: border-box;
+}
+.ad-slot img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+.ad-label {
+    font-size: 9px;
+    color: #888;
+    text-align: right;
+    margin-top: 2px;
+    text-transform: uppercase;
+}
