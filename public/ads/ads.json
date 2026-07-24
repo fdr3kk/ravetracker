@@ -1,18 +1,18 @@
 [
   {
     "id": "ad-001",
-    "title": "Underground Vinyl Store",
-    "image": "ads/placeholder_ad.svg",
-    "targetUrl": "https://example.com/underground-vinyl",
+    "title": "Underground Music Festival 2026",
+    "image": "https://loremflickr.com/728/90/festival,music",
+    "targetUrl": "https://example.com/festival",
     "active": true,
     "position": "top"
   },
   {
     "id": "ad-002",
-    "title": "Modular Synth Workshop",
-    "image": "ads/placeholder_ad.svg",
-    "targetUrl": "https://example.com/synth-workshop",
+    "title": "Rick Rubin Nyakkah",
+    "image": "https://loremflickr.com/160/200/dj,music",
+    "targetUrl": "https://www.instagram.com/fdr3k/",
     "active": true,
-    "position": "top"
+    "position": "sidebar"
   }
 ]
