@@ -3,15 +3,23 @@
     "id": 1,
     "title": "Underground Music Festival 2026",
     "type": "banner",
-    "image": "ads/placeholder_ad.svg",
+    "image": "ads/ad_logo.png",
     "targetUrl": "https://example.com/festival",
     "active": true
   },
   {
     "id": 2,
-    "title": "Rick Rubin Nyakkah",
+    "title": "Rick Rubin Nyakkah (Art)",
     "type": "sidebar",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/4/4d/Rick_Rubin_%28SXSW_2014%29.jpg",
+    "image": "ads/rick_art.jpg",
+    "targetUrl": "https://www.instagram.com/fdr3k/",
+    "active": true
+  },
+  {
+    "id": 3,
+    "title": "Rick Rubin Nyakkah (Photo)",
+    "type": "sidebar",
+    "image": "ads/rick_photo.jpg",
     "targetUrl": "https://www.instagram.com/fdr3k/",
     "active": true
   }

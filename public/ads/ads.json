@@ -2,15 +2,23 @@
   {
     "id": "ad-001",
     "title": "Bazinga",
-    "image": "ads/placeholder_ad.svg",
+    "image": "ads/ad_logo.png",
     "targetUrl": "https://example.com/festival",
     "active": true,
     "position": "top"
   },
   {
     "id": "ad-002",
-    "title": "Rick Rubin Nyakkah",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/4/4d/Rick_Rubin_%28SXSW_2014%29.jpg",
+    "title": "Rick Rubin Nyakkah (Art)",
+    "image": "ads/rick_art.jpg",
+    "targetUrl": "https://www.instagram.com/fdr3k/",
+    "active": true,
+    "position": "sidebar"
+  },
+  {
+    "id": "ad-003",
+    "title": "Rick Rubin Nyakkah (Photo)",
+    "image": "ads/rick_photo.jpg",
     "targetUrl": "https://www.instagram.com/fdr3k/",
     "active": true,
     "position": "sidebar"
