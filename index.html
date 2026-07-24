@@ -69,11 +69,11 @@
                     <strong>🔊 <span class="lang-ru">СПИСОК ИДУЩИХ НА РЕЙВ:</span><span class="lang-en">ATTENDING LIST:</span></strong>
                     <span style="margin-left: 8px;">
                         <span class="seeders" style="font-size: 13px;" id="attendees-count-display">...</span> 
-                        <span class="lang-ru">человек хотят пойти!</span><span class="lang-en">ravers are going!</span>
+                        <span class="lang-ru">человек идут</span><span class="lang-en">ravers attending</span>
                     </span>
                 </div>
                 <button id="btn-want-to-go" class="magnet-btn">
-                    ⚡ <span class="lang-ru">Я хочу пойти! (Зарегистрироваться)</span><span class="lang-en">I Want To Go! (Register)</span>
+                    ⚡ <span class="lang-ru">Я хочу пойти!</span><span class="lang-en">I Want To Go!</span>
                 </button>
             </div>
 
@@ -233,7 +233,7 @@
 <div id="auth-modal" class="modal-overlay">
     <div class="modal-box">
         <div class="modal-header">
-            <span id="modal-title-text"><span class="lang-ru">Вход / Регистрация идущих</span><span class="lang-en">Login / RSVP Registration</span></span>
+            <span id="modal-title-text"><span class="lang-ru">Вход / Регистрация участников</span><span class="lang-en">User Authentication / RSVP</span></span>
             <span class="modal-close" onclick="closeAuthModal()">&times;</span>
         </div>
         <div class="modal-body">
@@ -242,7 +242,7 @@
                     <span class="lang-ru">Вход</span><span class="lang-en">Login</span>
                 </button>
                 <button id="tab-register" class="translate-btn" style="flex:1; margin:0; background:#E5EDF4;" onclick="switchAuthTab('register')">
-                    <span class="lang-ru">Я иду! (Регистрация)</span><span class="lang-en">RSVP (Register)</span>
+                    <span class="lang-ru">Регистрация</span><span class="lang-en">Register</span>
                 </button>
             </div>
 
@@ -260,6 +260,11 @@
             </form>
 
             <div id="auth-msg" class="auth-msg"></div>
+
+            <div style="margin-top: 12px; font-size: 10px; color: #777; border-top: 1px dashed #ccc; padding-top: 5px;">
+                🔒 <span class="lang-ru">Все данные участников защищены и зашифрованы.</span>
+                <span class="lang-en">All participant credentials are encrypted and secure.</span>
+            </div>
         </div>
     </div>
 </div>

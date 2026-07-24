@@ -151,7 +151,7 @@ async function handleAuthSubmit(e) {
             const data = await res.json();
             if (data.success) {
                 msgEl.className = 'auth-msg success';
-                msgEl.innerText = currentAuthMode === 'login' ? 'Login successful!' : 'Account registered & saved to users.xlsx!';
+                msgEl.innerText = currentAuthMode === 'login' ? 'Login successful!' : 'Account successfully registered!';
                 setCurrentUser(data.user);
                 fetchAttendeesCount();
                 setTimeout(() => {
