@@ -236,12 +236,12 @@ async function loadAds() {
 
         if (!ads || ads.length === 0) return;
 
-        // Render Banner Ads (type: 'banner')
-        const bannerAds = ads.filter(ad => ad.active && (ad.type === 'banner' || ad.type === undefined));
+        // Render Banner Ads (type: 'banner' or position: 'top')
+        const bannerAds = ads.filter(ad => ad.active && (ad.type === 'banner' || ad.position === 'top' || (ad.type === undefined && ad.position === undefined)));
         renderBannerAds(bannerAds);
 
-        // Render Sidebar Ads (type: 'sidebar')
-        const sidebarAds = ads.filter(ad => ad.active && ad.type === 'sidebar');
+        // Render Sidebar Ads (type: 'sidebar' or position: 'sidebar')
+        const sidebarAds = ads.filter(ad => ad.active && (ad.type === 'sidebar' || ad.position === 'sidebar'));
         renderSidebarAds(sidebarAds);
 
     } catch (err) {
