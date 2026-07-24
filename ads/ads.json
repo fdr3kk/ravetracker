@@ -3,7 +3,7 @@
     "id": 1,
     "title": "Underground Music Festival 2026",
     "type": "banner",
-    "image": "https://via.placeholder.com/728x90?text=Festival+2026",
+    "image": "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=728&h=90&fit=crop",
     "targetUrl": "https://example.com/festival",
     "active": true
   },
@@ -11,7 +11,7 @@
     "id": 2,
     "title": "Rick Rubin Nyakkah",
     "type": "sidebar",
-    "image": "https://ibb.co/VY1pSTTQ",
+    "image": "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=160&h=200&fit=crop",
     "targetUrl": "https://www.instagram.com/fdr3k/",
     "active": true
   },
@@ -19,7 +19,7 @@
     "id": 3,
     "title": "Raver Fashion Line",
     "type": "sidebar",
-    "image": "https://via.placeholder.com/160x200?text=Fashion",
+    "image": "https://images.unsplash.com/photo-1523293182086-7651a899d37f?w=160&h=200&fit=crop",
     "targetUrl": "https://example.com/fashion",
     "active": true
   },
@@ -27,7 +27,7 @@
     "id": 4,
     "title": "Harmless Vibes Store",
     "type": "sidebar",
-    "image": "https://via.placeholder.com/160x200?text=Harm+Reduction",
+    "image": "https://images.unsplash.com/photo-1517457373614-b7152f800fd1?w=160&h=200&fit=crop",
     "targetUrl": "https://example.com/harm-reduction",
     "active": true
   },
@@ -35,7 +35,7 @@
     "id": 5,
     "title": "Premium Headphones",
     "type": "sidebar",
-    "image": "https://via.placeholder.com/160x200?text=Headphones",
+    "image": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=160&h=200&fit=crop",
     "targetUrl": "https://example.com/headphones",
     "active": true
   }
